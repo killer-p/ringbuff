@@ -1,6 +1,7 @@
 #include "ringbuff.h"
 
 /*
+
 * 创建一个ringbuff 用户定义字节大小
 */
 RingBuff_handle createRingBuff(int totalsize)

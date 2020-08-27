@@ -1,0 +1,3 @@
+[submodule "log"]
+	path = log
+	url = https://gitee.com/killerp/log

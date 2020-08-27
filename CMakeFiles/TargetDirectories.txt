@@ -1,0 +1,3 @@
+/root/c_program/ringbuff/CMakeFiles/rebuild_cache.dir
+/root/c_program/ringbuff/CMakeFiles/demo.dir
+/root/c_program/ringbuff/CMakeFiles/edit_cache.dir

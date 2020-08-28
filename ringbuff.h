@@ -6,15 +6,16 @@
 #include "string.h"
 typedef struct RingBuff *RingBuff_handle;
 
+//ringbuff结构体
 struct RingBuff
 {
-	unsigned char *source;
-	unsigned char *tail;
-	unsigned char *write;
-	unsigned char *read;
-	int size;
-	int writed_size;
-	int remain_size;
+	unsigned char *source;	//ringbuff的头部
+	unsigned char *tail;	//尾部
+	unsigned char *write;	//写指针
+	unsigned char *read;	//读指针
+	int size;	//ringbuff总长度
+	int writed_size;	//写入数据的长度
+	int remain_size;	//剩余空间
 	
 };
 

@@ -29,6 +29,11 @@ RingBuff_handle createRingBuff(int totalsize)
 */
 int writeRingBuff(RingBuff_handle handle,unsigned char *data,int size)
 {
+	if(handle->source == NULL ||handle == NULL)
+	{
+		LOGE("ringbuff has not been init");
+		return 0;
+	}
 	//检查剩余内存是否足够
 	if(handle->remain_size > size)
 	{
@@ -79,10 +84,16 @@ int writeRingBuff(RingBuff_handle handle,unsigned char *data,int size)
 */
 int readRingBuff(RingBuff_handle handle,unsigned char *data,int size)
 {
+	if(handle->source == NULL ||handle == NULL)
+	{
+		LOGE("ringbuff has not been init");
+		return 0;
+	}
 	if(data == NULL)
 	{
 		malloc(sizeof(unsigned char));
 	}
+
 	//要读取的数据少于已经写入的数据
 	if(handle->writed_size >= size)
 	{
@@ -162,6 +173,7 @@ int getRingBuffRemainSize(RingBuff_handle handle)
 */
 int deleteRingBuff(RingBuff_handle handle)
 {
+	//需要判断指针是否空，否则free()会出错
 	if(handle == NULL ||handle->source == NULL)
 	{
 		LOGE("free fail");
